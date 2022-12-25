@@ -14,4 +14,5 @@ const generateLocationMessage =  (url) => {
 
 module.exports = {
     generateMessage
+    generateLocationMessage
 }
