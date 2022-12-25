@@ -19,4 +19,8 @@ const addUser = ({id, username, room}) => {
             error: 'Username is in use!'
         }
     }
+
+    const user = {id, username, room}
+    users.push(user)
+    return {user}
 }
