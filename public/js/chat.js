@@ -13,8 +13,8 @@ document.querySelector('#message-form').addEventListener('submit', (e) => {
         if (error) {
             console.log(error)
         }
+        console.log('Message is delivered!')
     })
-
 })
 
 
@@ -26,6 +26,8 @@ document.querySelector('#send-location').addEventListener('click', () => {
         socket.emit('sendLocation', {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
+        }, () => {
+            
         })
     })
 })
