@@ -1,11 +1,17 @@
 const socket = io()
 
+const $messageForm = document.querySelector('#message-form')
+const $messageFormInput = $messageForm.querySelector('input')
+const $messageFormButton = $messageForm.querySelector('button')
+
 socket.on('message', (message) => {
     console.log(message)
 })
 
-document.querySelector('#message-form').addEventListener('submit', (e) => {
+$messageForm.addEventListener('submit', (e) => {
     e.preventDefault
+
+    $messageFormButton.setAttribute('disabled', 'disabled')
 
     const message = e.target.elements.message.value
 
@@ -27,7 +33,7 @@ document.querySelector('#send-location').addEventListener('click', () => {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
         }, () => {
-            
+            console.log('Location shared!')
         })
     })
 })
