@@ -8,6 +8,8 @@ const $messages = document.querySelector('#messages')
 
 const messageTemplate = document.querySelector('#message-template').innerHTML
 
+
+
 socket.on('message', (message) => {
     console.log(message)
     const html = Mustache.render(messageTemplate, {
@@ -15,7 +17,9 @@ socket.on('message', (message) => {
     })
     $messages.insertAdjacentHTML('beforeend', html)
 })
-
+socket.on('locationMessage', (url) => {
+    console.log(url)
+})
 $messageForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
