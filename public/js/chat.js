@@ -18,6 +18,9 @@ document.querySelector('#send-location').addEventListener('click', () => {
     if (!navigator.geolocation) {
         return alert('Geolocation is not supported by your browser')
     }
+    navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position)
+    })
 })
 
 // socket.on('countUpdated', (count) => {
