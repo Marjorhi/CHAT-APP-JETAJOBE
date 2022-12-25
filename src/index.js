@@ -20,11 +20,12 @@ let count = 0
 io.on('connection', (socket) => {
     console.log('New Websocket connection!')
 
-    socket.emit('message', generateMessage('Welcome!'))
-    socket.broadcast.emit('message', generateMessage('A new user has joined!'))
-
     socket.on('join', ({username, room}) => {
         socket.join(room)
+
+        socket.emit('message', generateMessage('Welcome!'))
+        socket.broadcast.to(room).emit('message', generateMessage(`${username} has joined!`))
+    
     })
 
     socket.on('sendMessage', (message, callback) => {
@@ -34,7 +35,7 @@ io.on('connection', (socket) => {
             return callback('Profanity is not allowed')
         }
         
-        io.emit('message', generateMessage(message)) 
+        io.to('Center City').emit('message', generateMessage(message)) 
         callback()
     })
 
