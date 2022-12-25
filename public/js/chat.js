@@ -21,7 +21,7 @@ document.querySelector('#send-location').addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition((position) => {
         socket.emit('sendLocation', {
             latitude: position.coords.latitude,
-            longitutde: position.coords.longitude
+            longitude: position.coords.longitude
         })
     })
 })
