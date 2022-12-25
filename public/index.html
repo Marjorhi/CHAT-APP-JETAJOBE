@@ -6,15 +6,22 @@
         <link rel="stylesheet" href="/css/styles.min.css">
     </head>
     <body>
-        Chat App Jetajobe
+        <div class="chat">
+            <div class="chat__sidebar">
+
+            </div>
+
+            <div class="chat__main">
+                <div id="messages"></div>
         
-        <div id="messages"></div>
+                <form id="message-form">
+                    <input name="message" placeholder="Message">
+                    <button>Send</button>
+                </form>
+                <button id="send-location">Send Location</button>
+            </div>
+        </div>
         
-        <form id="message-form">
-            <input name="message" placeholder="Message">
-            <button>Send</button>
-        </form>
-        <button id="send-location">Send Location</button>
 
         <script id="message-template" type="text/html">
             <div>
