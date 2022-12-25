@@ -19,7 +19,10 @@ let count = 0
 io.on('connection', (socket) => {
     console.log('New Websocket connection!')
 
-    socket.emit('message', 'Welcome')
+    socket.emit('message', {
+        text: 'Welcome!',
+        createdAt: new Date().getTime()
+    })
     socket.broadcast.emit('message', 'A new user has joined!')
 
     socket.on('sendMessage', (message, callback) => {
@@ -32,6 +35,7 @@ io.on('connection', (socket) => {
         io.emit('message', message) 
         callback()
     })
+
 
     socket.on('sendLocation', (coords, callback) => {
         io.emit('locationMessage', `https://google.com/maps?q=${coords.latitude},${coords.longitude}`)
