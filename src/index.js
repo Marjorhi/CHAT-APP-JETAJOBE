@@ -13,6 +13,10 @@ const publicDirectoryPath = path.join (__dirname, '../public')
 
 app.use(express.static(publicDirectoryPath))
 
+io.on('connection', () => {
+
+})
+
 server.listen(port, () => {
     console.log(`Server is up on port ${port}!`)
 })
