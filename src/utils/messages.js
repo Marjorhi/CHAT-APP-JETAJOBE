@@ -13,6 +13,6 @@ const generateLocationMessage =  (url) => {
 }
 
 module.exports = {
-    generateMessage
+    generateMessage,
     generateLocationMessage
 }
