@@ -74,6 +74,8 @@ $sendLocationButton.addEventListener('click', () => {
     })
 })
 
+socket.emit('join', {username, room})
+
 // socket.on('countUpdated', (count) => {
 //     console.log('The count has been updated!', count)
 // })
