@@ -13,4 +13,10 @@ const addUser = ({id, username, room}) => {
     const existingUser = users.find(user => {
         return user.room === room && user.username === username
     })
+
+    if (existingUser) {
+        return {
+            error: 'Username is in use!'
+        }
+    }
 }
