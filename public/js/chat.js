@@ -13,6 +13,13 @@ document.querySelector('#message-form').addEventListener('submit', (e) => {
 
 })
 
+
+document.querySelector('#send-location').addEventListener('click', () => {
+    if (!navigator.geolocation) {
+        return alert('Geolocation is not supported by your browser')
+    }
+})
+
 // socket.on('countUpdated', (count) => {
 //     console.log('The count has been updated!', count)
 // })
