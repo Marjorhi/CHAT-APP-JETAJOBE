@@ -6,4 +6,5 @@ socket.on('countUpdated', (count) => {
 
 document.querySelector('#increment').addEventListener('click', () => {
     console.log('Clicked')
+    socket.emit('increment')
 })
