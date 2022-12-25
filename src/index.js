@@ -15,6 +15,8 @@ app.use(express.static(publicDirectoryPath))
 
 io.on('connection', () => {
     console.log('New Websocket connection!')
+
+    let count = 0
 })
 
 server.listen(port, () => {
