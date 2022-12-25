@@ -25,6 +25,10 @@ io.on('connection', (socket) => {
         io.emit('message', message)
     })
 
+    socket.on('disconnect')
+
+
+    
     // socket.emit('countUpdated', count)
 
     // socket.on('increment', () => {
