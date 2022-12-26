@@ -33,6 +33,10 @@ const removeUser = (id) => {
     }
 }
 
+const getUser = (id) => {
+    return users.find((user) => user.id === id)
+}
+
 addUser({
     id : 20,
     username : 'Marjorie',
@@ -50,7 +54,7 @@ addUser({
 addUser({
     id : 20,
     username : 'Heeseung',
-    room : 'Korea'
+    room : 'Seoul'
 })
 
 // const removedUser = removeUser(20)
