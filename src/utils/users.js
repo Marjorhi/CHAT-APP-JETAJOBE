@@ -40,9 +40,22 @@ addUser({
 })
 
 
-const removedUser = removeUser(20)
-console.log(removedUser)
-console.log(users)
+addUser({
+    id : 21,
+    username : 'Solon',
+    room : 'Korea'
+})
+
+
+addUser({
+    id : 20,
+    username : 'Heeseung',
+    room : 'Korea'
+})
+
+// const removedUser = removeUser(20)
+// console.log(removedUser)
+// console.log(users)
 
 // const res = addUser({
 //     id : 21,
