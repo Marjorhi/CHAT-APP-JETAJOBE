@@ -18,6 +18,8 @@ const {username, room}= Qs.parse(location.search, { ignoreQueryPrefix : true })
 
 const autoscroll = () => {
     const $newMessage = $messages.lastElementChild
+
+    const newMessageHeight = $newMessage.offsetHeight
 }
 
 socket.on('message', (message) => {
