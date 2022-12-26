@@ -25,6 +25,11 @@ const addUser = ({id, username, room}) => {
     return {user}
 }
 
+const removeUser = (id) => {
+    const index = users.findIndex((user) => user.id === id
+    )
+}
+
 addUser({
     id : 20,
     username : 'Marjorie',
@@ -32,3 +37,11 @@ addUser({
 })
 
 console.log(users)
+
+const res = addUser({
+    id : 21,
+    username : 'Marjorie',
+    room: 'Korea'
+})
+
+console.log(res)
