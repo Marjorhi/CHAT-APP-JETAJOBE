@@ -62,7 +62,7 @@ io.on('connection', (socket) => {
             io.to(user.room).emit('message', generateMessage(`${user.username} has left!`))
         }
     })
-
+})
 
 
     // socket.emit('countUpdated', count)
@@ -72,7 +72,7 @@ io.on('connection', (socket) => {
     //     //socket.emit('countUpdated', count)
     //     io.emit('countUpdated', count)
     // })
-})
+
 
 server.listen(port, () => {
     console.log(`Server is up on port ${port}!`)
