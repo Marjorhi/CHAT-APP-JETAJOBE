@@ -57,6 +57,9 @@ addUser({
     room : 'Seoul'
 })
 
+const user = getUser(210)
+console.log(user)
+
 // const removedUser = removeUser(20)
 // console.log(removedUser)
 // console.log(users)
