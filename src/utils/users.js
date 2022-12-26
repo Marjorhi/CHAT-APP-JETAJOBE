@@ -37,8 +37,8 @@ const getUser = (id) => {
     return users.find((user) => user.id === id)
 }
 
-const getUserInRoom = (room) => {
-    room = room.trim().toLowerCase()
+const getUsersInRoom = (room) => {
+    room = String(room).trim().toLowerCase()
     return users.filter((user) => user.room === room)
 }
 
@@ -46,7 +46,7 @@ module.exports = {
     addUser,
     removeUser,
     getUser,
-    getUserInRoom
+    getUsersInRoom
 }
 
 // addUser({
@@ -72,7 +72,7 @@ module.exports = {
 // const user = getUser(20)
 // console.log(user)
 
-// const userList = getUserInRoom('Korea')
+// const userList = getUsersInRoom('Korea')
 // console.log(userList)
 
 // const removedUser = removeUser(20)

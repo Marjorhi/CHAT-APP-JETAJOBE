@@ -4,7 +4,7 @@ const express = require ('express')
 const socketio = require('socket.io')
 const Filter = require('bad-words')
 const {generateMessage, generateLocationMessage} = require('./utils/messages')
-const { addUser, removeUser, getUser, getUserInRoom} = require('./utils/users')
+const { addUser, removeUser, getUser, getUsersInRoom} = require('./utils/users')
 
 const app = express()
 const server = http.createServer(app)
@@ -16,7 +16,6 @@ const publicDirectoryPath = path.join (__dirname, '../public')
 
 app.use(express.static(publicDirectoryPath))
 
-let count = 0
 
 io.on('connection', (socket) => {
     console.log('New Websocket connection!')
@@ -34,7 +33,7 @@ io.on('connection', (socket) => {
         socket.broadcast.to(user.room).emit('message', generateMessage('Admin | Marjorie',`${user.username} has joined!`))
         io.to(user.room).emit('roomData', {
             room : user.room,
-            users : getUserInRoom(user.room)
+            users : getUsersInRoom(user.room)
         })
         callback()
     })
@@ -65,7 +64,7 @@ io.on('connection', (socket) => {
             io.to(user.room).emit('message', generateMessage('Admin | Marjorie',`${user.username} has left!`))
             io.to(user.room).emit('roomData', {
                 room : user.room,
-                users : getUserInRoom(user.room)
+                users : getUsersInRoom(user.room)
             })
         }
     })
