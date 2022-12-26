@@ -32,7 +32,10 @@ io.on('connection', (socket) => {
 
         socket.emit('message', generateMessage('Admin | Marjorie','Welcome!'))
         socket.broadcast.to(user.room).emit('message', generateMessage('Admin | Marjorie',`${user.username} has joined!`))
-
+        io.to(user.room).emit('roomData', {
+            room : user.room,
+            users : getUserInRoom(user.room)
+        })
         callback()
     })
 
