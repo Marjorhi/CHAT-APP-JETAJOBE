@@ -21,14 +21,14 @@ let count = 0
 io.on('connection', (socket) => {
     console.log('New Websocket connection!')
 
-    socket.on('join', (options, callback) => {
-        const { error, user} = addUser({id: socket.id, ...options})
+    socket.on('join', ({username, room}, callback) => {
+        const { error, user} = addUser({id: socket.id, username, room})
 
         if (error) {
             return callback(error)
         }
 
-        socket.join(room)
+        socket.join(user.room)
 
         socket.emit('message', generateMessage('Welcome!'))
         socket.broadcast.to(user.room).emit('message', generateMessage(`${user.username} has joined!`))
