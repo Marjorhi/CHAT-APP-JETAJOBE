@@ -42,31 +42,38 @@ const getUserInRoom = (room) => {
     return users.filter((user) => user.room === room)
 }
 
-addUser({
-    id : 20,
-    username : 'Marjorie',
-    room : 'Korea'
-})
+module.exports = {
+    addUser,
+    removeUser,
+    getUser,
+    getUserInRoom
+}
+
+// addUser({
+//     id : 20,
+//     username : 'Marjorie',
+//     room : 'Korea'
+// })
 
 
-addUser({
-    id : 21,
-    username : 'Solon',
-    room : 'Korea'
-})
+// addUser({
+//     id : 21,
+//     username : 'Solon',
+//     room : 'Korea'
+// })
 
 
-addUser({
-    id : 20,
-    username : 'Heeseung',
-    room : 'Korea'
-})
+// addUser({
+//     id : 20,
+//     username : 'Heeseung',
+//     room : 'Korea'
+// })
 
-const user = getUser(240)
-console.log(user)
+// const user = getUser(20)
+// console.log(user)
 
-const userList = getUserInRoom('Japan')
-console.log(userList)
+// const userList = getUserInRoom('Korea')
+// console.log(userList)
 
 // const removedUser = removeUser(20)
 // console.log(removedUser)
